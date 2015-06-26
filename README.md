@@ -22,7 +22,7 @@ Endpoint | Method | Action
 #### Running the application
 
 Simply run the SpringBootTestAppApplication.java from your favourite IDE or use the following Maven command to automatically build 
-and run the application (when startet, you can then use any REST-test client to test the endpoint)
+and run the application (you can then use any REST-test client to test the endpoint)
 
 ```shell
 mvn clean package -DskipTests=true && java -jar target/springboot.testapp-0.0.1-SNAPSHOT.jar springboot.testapp.SpringBootTestAppApplication
