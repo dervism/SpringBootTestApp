@@ -10,3 +10,4 @@ Technologies to test:
 - https://github.com/spring-projects/spring-boot/tree/v1.2.4.RELEASE/spring-boot-samples
 - https://github.com/spring-projects/spring-boot/tree/v1.2.4.RELEASE/spring-boot-samples/spring-boot-sample-flyway
 - http://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+- http://kielczewski.eu/2015/01/application-metrics-with-spring-boot-actuator/
