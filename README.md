@@ -19,6 +19,14 @@ Endpoint | Method | Action
 /hello | POST | Create a new person
 /hello/{personId} | GET | Find a person by id (included in the *WithAopMetrics* branch)
 
+#### Running the application
+
+Simply run the SpringBootTestAppApplication.java from your favourite IDE or use the following Maven command to automatically build 
+and run the application (when startet, you can then use any REST-test client to test the endpoint)
+
+```shell
+mvn clean package -DskipTests=true && java -jar target/springboot.testapp-0.0.1-SNAPSHOT.jar springboot.testapp.SpringBootTestAppApplication
+```
 
 ### Reference docs and guides
 - https://github.com/spring-projects/spring-data-jpa
