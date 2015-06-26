@@ -2,23 +2,22 @@
 An sample backend application with a simple REST API. The application can be used as a starting point for 
 rapid prototyping of REST backends.
 
-The application on the master branch has:
+The application on the *master* branch has:
 - HSQLDB in-memory database for fast prototyping
 - Flyway to automatically handle database schema migration and version control (http://flywaydb.org/)
 - Spring Data JPA for automatically generating data repositories
 
-Some features are provided on separate branches
+**Additional features are provided on separate branches**
 
-- WithAopMetrics: Spring Actuators for metrics and monitoring. Demonstrates how to use AOP to create custom metrics.
+- *WithAopMetrics*: Spring Actuators for metrics and monitoring. Demonstrates how to use AOP to create custom metrics.
 
-
-The application has a single REST endpoint:
+**The application has a single REST endpoint:**
 
 Endpoint | Method | Action 
 -------- | ------ | ------
 /hello | GET | Returns a list of people
 /hello | POST | Create a new person
-/hello/{personId} | GET | Find a person by id (included in the WithAopMetrics branch)
+/hello/{personId} | GET | Find a person by id (included in the *WithAopMetrics* branch)
 
 
 ### Reference docs and guides
