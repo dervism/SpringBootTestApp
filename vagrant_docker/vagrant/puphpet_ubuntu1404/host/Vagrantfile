@@ -1,0 +1,31 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Specify Vagrant version and Vagrant API version
+Vagrant.require_version ">= 1.6.0"
+VAGRANTFILE_API_VERSION = "2"
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
+# Create and configure the Docker container(s)
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Assign a friendly name to this host VM
+  config.vm.hostname = "docker-host"
+
+  # Port forwarding.
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+
+  # Skip checking for an updated Vagrant box
+  # config.vm.box_check_update = false
+
+  # Always use Vagrant's default insecure key
+  config.ssh.insert_key = false
+
+  # Disable synced folders for the Docker container
+  # (prevents an NFS error on "vagrant up")
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.box = "puphpet/ubuntu1404-x64"
+  config.vm.provision "docker"
+
+end

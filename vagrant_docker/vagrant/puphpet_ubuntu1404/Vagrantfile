@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Specify Vagrant version and Vagrant API version
+Vagrant.require_version ">= 1.6.0"
+VAGRANTFILE_API_VERSION = "2"
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
+# Create and configure the Docker container(s)
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Disable synced folders for the Docker container
+  # (prevents various errors on "vagrant up")
+  config.vm.synced_folder ".", "/app", disabled: true
+
+  # Configure the Docker provider for Vagrant
+  config.vm.provider "docker" do |docker|
+
+    # Define the location of the Vagrantfile for the host VM
+    # Comment out this line to use default host VM that is
+    # based on boot2docker
+    docker.vagrant_vagrantfile = "host/Vagrantfile"
+
+    # Use this option instead of 'build_dir' to let 
+    # Vagrant automatically pull a Docker image.
+    # docker.image = "java:8"
+
+    # Use this option when  you want to build a 
+    # Docker image from a local Dockerfile. (preferred)
+    docker.build_dir = "./app"
+
+    # Specify port mappings
+    docker.ports = ['8080:8080']
+
+    # Specify a friendly name for the Docker container
+    docker.name = 'dockertest-java-container'
+
+  end
+end
