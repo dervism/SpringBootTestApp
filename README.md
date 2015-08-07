@@ -1,5 +1,5 @@
 # Spring Boot Test App
-An sample backend application with a simple REST API. The application can is a quick start application used to test
+An sample backend application with a simple REST API. The applicationUdpate is a quick start application used to test
 Vagrant + Docker + Java.
 
 #### Features
